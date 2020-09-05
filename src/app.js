@@ -5,6 +5,13 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+var angle = 1;
+var startAngle = 0;
+var endAngle=2;
+
+var betweenAngles = (angle >= startAngle && angle <= endAngle);
+console.log(betweenAngles);
+
 // connection to db
 mongoose.connect('mongodb://mongodb/crud-mongo')
   .then(db => console.log('db connected'))
