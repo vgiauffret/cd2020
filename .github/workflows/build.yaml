@@ -22,11 +22,17 @@ jobs:
     - name: Install NPM dependencies
       run: |
         npm install --production --unsafe-perm
+      #Check dependency
+    - uses: sburris/dependency-check-action@master
+      with:
+        Project-Name: TestApp
+      #Archive dependency check
     - name: Archive dependency check reports
       uses: actions/upload-artifact@v1
       with:
         name: reports
         path: reports
+      #Buil and push docker
     - name: build-push
       uses: docker/build-push-action@v1
       with:
