@@ -1,7 +1,7 @@
 FROM node:alpine
 
-LABEL maintainer "eric.muellenbach@yncrea.fr"
+COPY . .
 
-ADD app.js .
+RUN npm i
 
-ENTRYPOINT [ "node", "app.js" ]
+ENTRYPOINT ["npm","start"]
